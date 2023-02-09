@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "+ObCCVqwCDkl4liS6wRU9AWkVIrqA3NN+ofRc6uaJoI//opfiy6L2VI3c7Cd9/3fMblGCfGjY2Ch2Oqv9vOZdA==",
+  "success": true,
+  "projectFilePath": "/Users/rminafa/Projects/eCommerce_Authorization_Authentication/server/strore.server/strore.server/strore.server.csproj",
+  "expectedPackageFiles": [
+    "/Users/rminafa/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/rminafa/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/rminafa/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/Users/rminafa/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/rminafa/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/rminafa/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
