@@ -5,9 +5,11 @@ namespace strore.server.DataBase;
 
 public class ApplicationDbContext: DbContext
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : base(options)
-    {
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, DbSet<User> users, DbSet<Store> stores, DbSet<Product> products)
+        : base(options){
+        Users = users;
+        Stores = stores;
+        Products = products;
     }
 
     public DbSet<User> Users { get; set; }
