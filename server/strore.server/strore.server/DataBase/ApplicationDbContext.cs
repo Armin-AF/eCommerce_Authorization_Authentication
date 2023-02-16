@@ -3,14 +3,9 @@ using strore.server.Models;
 
 namespace strore.server.DataBase;
 
-public class ApplicationDbContext: DbContext
+public class ApplicationDbContext : DbContext
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, DbSet<User> users, DbSet<Store> stores, DbSet<Product> products)
-        : base(options){
-        Users = users;
-        Stores = stores;
-        Products = products;
-    }
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
     public DbSet<User> Users { get; set; }
     public DbSet<Store> Stores { get; set; }

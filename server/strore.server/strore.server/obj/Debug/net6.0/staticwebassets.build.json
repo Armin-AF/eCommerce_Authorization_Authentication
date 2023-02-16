@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "vdCDpsuSIeqRdvw/MJ+9+K9Ebn8pZouzc3WS8H7xIvg=",
+  "Source": "strore.server",
+  "BasePath": "_content/strore.server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

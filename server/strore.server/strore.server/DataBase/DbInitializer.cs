@@ -37,6 +37,7 @@ public class DbInitializer
                 UserName = "admin",
                 Email = "admin@email.com",
                 Role = "admin",
+                StoreId = "store1",
                 Password = "123456"
             }
         );
