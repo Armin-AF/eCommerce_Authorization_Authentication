@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Identity;
+
 namespace strore.server.Models;
 
-public class User
+public class User: IdentityUser<string>
 {
     public string Id { get; set; }
     public string UserName { get; set; }
