@@ -27,6 +27,14 @@ public class UserController: ControllerBase
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterViewModel model)
     {
+        var validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        var random = new Random();
+        var userName = new string(
+            Enumerable.Repeat(validChars, 8)
+                .Select(s => s[random.Next(s.Length)])
+                .ToArray()
+        );
+        
         if (!ModelState.IsValid)
         {
             return BadRequest(ModelState);
@@ -34,8 +42,9 @@ public class UserController: ControllerBase
 
         var user = new User()
         {
+            Id = Guid.NewGuid().ToString(),
             Email = model.Email,
-            UserName = model.Email,
+            UserName = "user" + Guid.NewGuid().ToString("N"), // Generate a unique username
             Role = model.Role,
         };
 
