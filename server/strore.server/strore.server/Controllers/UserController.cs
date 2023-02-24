@@ -27,7 +27,7 @@ public class UserController: ControllerBase
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterViewModel model)
     {
-        var validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        const string validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         var random = new Random();
         var userName = new string(
             Enumerable.Repeat(validChars, 8)
@@ -55,7 +55,7 @@ public class UserController: ControllerBase
             return BadRequest(result.Errors);
         }
 
-        await _signInManager.SignInAsync(user, false);
+        await _signInManager.SignInAsync(user, false); 
 
         return Ok();
     }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using strore.server.DataBase;
 
@@ -11,9 +12,10 @@ using strore.server.DataBase;
 namespace strore.server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230223122025_User3")]
+    partial class User3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,17 +24,26 @@ namespace strore.server.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("RoleId")
-                        .HasColumnType("nvarchar(450)");
+                    b.HasKey("Id");
 
-                    b.HasKey("UserId", "RoleId");
-
-                    b.ToTable("IdentityUserRole<string>");
+                    b.ToTable("UserClaims", (string)null);
                 });
 
             modelBuilder.Entity("strore.server.Models.Product", b =>
@@ -73,7 +84,7 @@ namespace strore.server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d2a611f7-7496-4d4a-b1d1-f1d7ea566fdc",
+                            Id = "6de33d24-7304-4216-8f9f-00726cd035cc",
                             Category = "category1",
                             Description = "product1 description",
                             ImageUrl = "https://picsum.photos/200/300",
@@ -84,7 +95,7 @@ namespace strore.server.Migrations
                         },
                         new
                         {
-                            Id = "9133bf6b-e110-4ee7-8e3d-12622e716ea6",
+                            Id = "dd356745-2d90-48bc-85a5-1368c51d8da9",
                             Category = "category1",
                             Description = "product2 description",
                             ImageUrl = "https://picsum.photos/200/300",
@@ -95,7 +106,7 @@ namespace strore.server.Migrations
                         },
                         new
                         {
-                            Id = "12cec80f-90e5-4c3c-adcd-f7716efa1487",
+                            Id = "d377d749-6242-47c4-8252-62895d2f08e1",
                             Category = "category1",
                             Description = "product3 description",
                             ImageUrl = "https://picsum.photos/200/300",
@@ -205,9 +216,9 @@ namespace strore.server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e7ea4ab1-daf2-41d9-b113-3712226715d2",
+                            Id = "235c9e66-574c-4247-9f8d-3d8110a1ae44",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "62b3fd2c-080d-4904-8900-40d7e05a1f28",
+                            ConcurrencyStamp = "81ed56d5-c984-43ce-9ea0-4a163368902d",
                             Email = "user1@email.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -219,9 +230,9 @@ namespace strore.server.Migrations
                         },
                         new
                         {
-                            Id = "ed643353-1dac-4ba2-acd2-09046bbd9df4",
+                            Id = "800a7c50-0038-4f23-8334-931ccb8829e0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b894e580-77e4-4c83-a90f-8bb5a6fb070c",
+                            ConcurrencyStamp = "e21c7c1d-6f44-4392-92aa-343fe5c044fe",
                             Email = "user2@email.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -235,7 +246,7 @@ namespace strore.server.Migrations
                         {
                             Id = "f5b5b5b5-5b5b-5b5b-5b5b-5b5b5b5b5b5b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "776808f6-3f61-4866-ada1-0baf6da79280",
+                            ConcurrencyStamp = "10bf9de7-b808-44d4-86bf-33ef41bd018e",
                             Email = "admin@email.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,

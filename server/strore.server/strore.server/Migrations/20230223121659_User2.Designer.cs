@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using strore.server.DataBase;
 
@@ -11,9 +12,10 @@ using strore.server.DataBase;
 namespace strore.server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230223121659_User2")]
+    partial class User2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,19 +23,6 @@ namespace strore.server.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("RoleId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("UserId", "RoleId");
-
-                    b.ToTable("IdentityUserRole<string>");
-                });
 
             modelBuilder.Entity("strore.server.Models.Product", b =>
                 {
@@ -73,7 +62,7 @@ namespace strore.server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d2a611f7-7496-4d4a-b1d1-f1d7ea566fdc",
+                            Id = "6ca9ab59-a639-4324-b859-4000dd2ae595",
                             Category = "category1",
                             Description = "product1 description",
                             ImageUrl = "https://picsum.photos/200/300",
@@ -84,7 +73,7 @@ namespace strore.server.Migrations
                         },
                         new
                         {
-                            Id = "9133bf6b-e110-4ee7-8e3d-12622e716ea6",
+                            Id = "ae38ac8d-0e78-4515-8ebd-186045703dd3",
                             Category = "category1",
                             Description = "product2 description",
                             ImageUrl = "https://picsum.photos/200/300",
@@ -95,7 +84,7 @@ namespace strore.server.Migrations
                         },
                         new
                         {
-                            Id = "12cec80f-90e5-4c3c-adcd-f7716efa1487",
+                            Id = "4e82662a-b847-4caa-b3b8-fd10e599e792",
                             Category = "category1",
                             Description = "product3 description",
                             ImageUrl = "https://picsum.photos/200/300",
@@ -205,9 +194,9 @@ namespace strore.server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e7ea4ab1-daf2-41d9-b113-3712226715d2",
+                            Id = "9f77d7be-850c-48e2-a5a0-06805ae82e2d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "62b3fd2c-080d-4904-8900-40d7e05a1f28",
+                            ConcurrencyStamp = "1df4007f-c456-4d1c-916d-a315ed71cf81",
                             Email = "user1@email.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -219,9 +208,9 @@ namespace strore.server.Migrations
                         },
                         new
                         {
-                            Id = "ed643353-1dac-4ba2-acd2-09046bbd9df4",
+                            Id = "a1f1aa6d-b856-4b02-993d-9d6782a24a5a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b894e580-77e4-4c83-a90f-8bb5a6fb070c",
+                            ConcurrencyStamp = "25008377-b468-495d-b156-e7bff20c1fa4",
                             Email = "user2@email.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -235,7 +224,7 @@ namespace strore.server.Migrations
                         {
                             Id = "f5b5b5b5-5b5b-5b5b-5b5b-5b5b5b5b5b5b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "776808f6-3f61-4866-ada1-0baf6da79280",
+                            ConcurrencyStamp = "7b8fe9cb-92c4-4040-beb4-3252c068af5a",
                             Email = "admin@email.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,

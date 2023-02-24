@@ -21,7 +21,6 @@ public class DbInitializer
                 Email = "user1@email.com",
                 Role = "user",
                 StoreId = "store1",
-                Password = "123456"
             },
             new User
             {
@@ -30,7 +29,6 @@ public class DbInitializer
                 Email = "user2@email.com",
                 Role = "user",
                 StoreId = "store2",
-                Password = "123456"
             },
             new User{
                 Id = new Guid("f5b5b5b5-5b5b-5b5b-5b5b-5b5b5b5b5b5b").ToString(),
@@ -38,7 +36,6 @@ public class DbInitializer
                 Email = "admin@email.com",
                 Role = "admin",
                 StoreId = "store1",
-                Password = "123456"
             }
         );
         

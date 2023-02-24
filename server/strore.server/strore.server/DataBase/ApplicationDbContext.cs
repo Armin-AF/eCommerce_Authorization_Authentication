@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using strore.server.Models;
 
@@ -14,6 +15,9 @@ public class ApplicationDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+        
+        modelBuilder.Entity<IdentityUserRole<string>>()
+            .HasKey(r => new { r.UserId, r.RoleId });
 
         new DbInitializer(modelBuilder).Seed();
     }
